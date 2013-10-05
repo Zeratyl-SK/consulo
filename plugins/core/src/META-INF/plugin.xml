@@ -3101,6 +3101,7 @@
     <extensionPoint name="bundledColorScheme" beanClass="com.intellij.openapi.editor.colors.impl.BundledColorSchemeEP"/>
     <extensionPoint name="bundledQuickListsProvider" interface="com.intellij.openapi.actionSystem.impl.BundledQuickListsProvider"/>
     <extensionPoint name="bundledKeymap" beanClass="com.intellij.openapi.keymap.impl.BundledKeymapEP"/>
+    <extensionPoint name="bundledUITheme" beanClass="org.consulo.ui.BundledUIThemeEP"/>
 
     <extensionPoint name="toolWindow" beanClass="com.intellij.openapi.wm.ToolWindowEP">
       <with attribute="factoryClass" implements="com.intellij.openapi.wm.ToolWindowFactory"/>
@@ -5563,5 +5564,8 @@
     <projectService serviceInterface="com.intellij.codeInsight.daemon.impl.analysis.HighlightingLevelManager"
                     serviceImplementation="com.intellij.codeInsight.daemon.impl.analysis.HighlightingSettingsPerFile"/>
 
+    <applicationService serviceInterface="org.consulo.ui.UIThemeManager" serviceImplementation="org.consulo.ui.impl.UIThemeManagerImpl" />
+
+    <bundledUITheme file="/uiThemes/default.clt" />
   </extensions>
 </idea-plugin>

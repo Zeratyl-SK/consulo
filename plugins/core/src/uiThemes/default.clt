@@ -1,0 +1,49 @@
+#global {
+  @NAME : 'Default';
+  @LINE_SPACING : 1.0;
+  @EDITOR_FONT_SIZE : 12;
+  @SELECTION_BACKGROUND : #526da5;
+  @SELECTION_BACKGROUND : #526da5;
+  @CARET_ROW_COLOR : #ffffd7;
+  @METHOD_SEPARATORS_COLOR : #c0c0c0;
+  @WHITESPACES : #c5c5c5;
+  @INDENT_GUIDE : #e6e6e6;
+  @GUTTER_BACKGROUND : #f0f0f0;
+  @NOTIFICATION_BACKGROUND : #ffffcc;
+  @SELECTED_INDENT_GUIDE : #c8c8c8;
+  @SELECTION_FOREGROUND : #ffffff;
+  @LINE_NUMBERS_COLOR : #800000;
+  @ANNOTATIONS_COLOR : #000080;
+  @ANNOTATIONS_MERGED_COLOR : #008080;
+  @CARET_COLOR : #0;
+  @RIGHT_MARGIN_COLOR : #c0c0c0;
+  @SOFT_WRAP_SIGN_COLOR : #c0c0c0;
+  @TEARLINE_COLOR : #808080;
+  @SELECTED_TEARLINE_COLOR : #000000;
+  @READONLY_FRAGMENT_BACKGROUND : #cfe7ff;
+  @ADDED_LINES_COLOR : #edfced;
+  @MODIFIED_LINES_COLOR : #e0f0ff;
+  @CONSOLE_BACKGROUND_KEY : #ffffff;
+}
+
+#textAttributes
+{
+  IDENTIFIER
+  {
+    foreground: #0;
+  }
+
+  TEMPLATE_LANGUAGE_COLOR
+  {
+    background: #f7faff;
+  }
+}
+
+#icons
+{
+  #retina
+  {
+    Nodes-Class: '/nodes/class@2x.png';
+  }
+  Nodes-Class: '/nodes/class.png';
+}

@@ -37,6 +37,7 @@ import com.intellij.openapi.options.*;
 import com.intellij.openapi.util.*;
 import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.UIUtil;
+import org.consulo.ui.UIThemeManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -85,6 +86,7 @@ public class EditorColorsManagerImpl extends EditorColorsManager implements Name
     loadAdditionalTextAttributes();
 
     setGlobalScheme(myDefaultColorSchemesManager.getAllSchemes()[0]);
+    UIThemeManager.getInstance();
   }
 
   private static boolean isUnitTestOrHeadlessMode() {

@@ -32,6 +32,9 @@
     <orderEntry type="module" module-name="compiler-impl" />
     <orderEntry type="module" module-name="compiler-artifact-api" />
     <orderEntry type="module" module-name="compiler-artifact-impl" />
+    <orderEntry type="library" name="commons-io" level="project" />
+    <orderEntry type="library" name="antlr-runtime" level="project" />
+    <orderEntry type="library" name="lesscss4j" level="project" />
   </component>
 </module>
 
