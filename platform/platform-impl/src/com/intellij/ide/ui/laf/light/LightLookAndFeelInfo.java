@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2013 JetBrains s.r.o.
+ * Copyright 2000-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.ide.ui.laf.darcula;
+package com.intellij.ide.ui.laf.light;
 
-import com.intellij.ide.ui.laf.basic.BasicLaf;
+import com.intellij.ide.IdeBundle;
+import org.jetbrains.annotations.NonNls;
 
-import javax.swing.plaf.metal.DefaultMetalTheme;
+import javax.swing.*;
 
 /**
  * @author Konstantin Bulenkov
  */
-public final class DarculaLaf extends BasicLaf {
-  public static final String NAME = "Darcula";
+public class LightLookAndFeelInfo extends UIManager.LookAndFeelInfo {
+    @NonNls public static final String CLASS_NAME = "idea.light.laf.classname";
 
-  public DarculaLaf() {
-    super(NAME);
-  }
+    public LightLookAndFeelInfo(){
+      super(IdeBundle.message("idea.light.look.and.feel"), CLASS_NAME);
+    }
 
-  @Override
-  public DefaultMetalTheme createTheme() {
-    return new DarculaMetalTheme();
-  }
+    public boolean equals(Object obj){
+      return (obj instanceof LightLookAndFeelInfo);
+    }
+
+    public int hashCode(){
+      return getName().hashCode();
+    }
 }

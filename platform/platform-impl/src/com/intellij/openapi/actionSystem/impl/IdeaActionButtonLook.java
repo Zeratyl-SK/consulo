@@ -59,7 +59,7 @@ public class IdeaActionButtonLook extends ActionButtonLook {
     }
     else {
       final Color bg = UIUtil.getPanelBackground();
-      final boolean dark = UIUtil.isUnderDarcula();
+      final boolean dark = UIUtil.isUnderBundledLaf();
       g.setColor(state == ActionButtonComponent.PUSHED ? ColorUtil.shift(bg, dark ? 1d / 0.7d : 0.7d) : dark ? Gray._255.withAlpha(40) : ALPHA_40);
       g.fillRect(1, 1, dimension.width - 2, dimension.height - 2);
     }
@@ -76,7 +76,7 @@ public class IdeaActionButtonLook extends ActionButtonLook {
       }
     }
     else {
-      final double shift = UIUtil.isUnderDarcula() ? 1/0.49 : 0.49;
+      final double shift = UIUtil.isUnderBundledLaf() ? 1/0.49 : 0.49;
       g.setColor(ColorUtil.shift(UIUtil.getPanelBackground(), shift));
       ((Graphics2D)g).setStroke(BASIC_STROKE);
       final GraphicsConfig config = GraphicsUtil.setupAAPainting(g);

@@ -680,10 +680,10 @@ public class HighlightMethodUtil {
       PsiParameter parameter = i < parameters.length ? parameters[i] : null;
       PsiExpression expression = i < expressions.length ? expressions[i] : null;
       boolean showShort = showShortType(i, parameters, expressions, substitutor);
-      @NonNls String mismatchColor = showShort ? null : UIUtil.isUnderDarcula() ? "FF6B68" : "red";
+      @NonNls String mismatchColor = showShort ? null : UIUtil.isUnderBundledLaf() ? "FF6B68" : "red";
 
       s += "<tr" + (i % 2 == 0 ? " style='background-color: #"
-                                 + (UIUtil.isUnderDarcula() ? ColorUtil.toHex(ColorUtil.shift(UIUtil.getToolTipBackground(), 1.1)) : "eeeeee")
+                                 + (UIUtil.isUnderBundledLaf() ? ColorUtil.toHex(ColorUtil.shift(UIUtil.getToolTipBackground(), 1.1)) : "eeeeee")
                                  + "'" : "") + ">";
       s += "<td><b><nobr>";
       if (parameter != null) {
@@ -734,7 +734,7 @@ public class HighlightMethodUtil {
       PsiType type = expression.getType();
 
       boolean showShort = showShortType(i, parameters, expressions, substitutor);
-      @NonNls String mismatchColor = showShort ? null : UIUtil.isUnderDarcula() ? "ff6464" : "red";
+      @NonNls String mismatchColor = showShort ? null : UIUtil.isUnderBundledLaf() ? "ff6464" : "red";
       ms += "<td> " + "<b><nobr>" + (i == 0 ? "(" : "")
             + "<font " + (showShort ? "" : "color=" + mismatchColor) + ">" +
             XmlStringUtil.escapeString(showShort ? type.getPresentableText() : JavaHighlightUtil.formatType(type))

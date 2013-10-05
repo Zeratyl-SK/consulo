@@ -676,7 +676,7 @@ public class GitLogUI implements Disposable {
       }
     };
 
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       myJBTable.setStriped(true);
       myJBTable.setShowGrid(false);
     }
@@ -1520,7 +1520,7 @@ public class GitLogUI implements Disposable {
       }
     }
     if (myClearedHighlightingRoots.isEmpty()) {
-      return myTableModel.isInCurrentBranch(row) ? Colors.highlighted : UIUtil.isUnderDarcula() ? UIUtil.getTableBackground().darker() : UIUtil.getTableBackground();
+      return myTableModel.isInCurrentBranch(row) ? Colors.highlighted : UIUtil.isUnderBundledLaf() ? UIUtil.getTableBackground().darker() : UIUtil.getTableBackground();
     }
     final CommitI commitAt = myTableModel.getCommitAt(row);
     if (commitAt.holdsDecoration()) {

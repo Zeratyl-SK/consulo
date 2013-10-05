@@ -15,7 +15,7 @@
  */
 package com.intellij.ide.ui.laf.darcula.ui;
 
-import com.intellij.ide.ui.laf.darcula.DarculaLaf;
+import com.intellij.ide.ui.laf.light.LightLaf;
 import com.intellij.ui.ShowUIDefaultsAction;
 import com.intellij.ui.components.JBCheckBox;
 
@@ -102,7 +102,8 @@ public class DarculaTest {
 
   public static void main(String[] args) {
     try {
-      UIManager.setLookAndFeel(new DarculaLaf());
+      //UIManager.setLookAndFeel(new DarculaLaf());
+      UIManager.setLookAndFeel(new LightLaf());
     }
     catch (UnsupportedLookAndFeelException ignored) {}
     final JFrame frame = new JFrame("Darcula Demo");

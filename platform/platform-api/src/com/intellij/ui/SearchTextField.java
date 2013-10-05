@@ -110,7 +110,7 @@ public class SearchTextField extends JPanel {
       }
     });
 
-    if (hasNativeLeopardSearchControl() || UIUtil.isUnderDarcula()) {
+    if (hasNativeLeopardSearchControl() || UIUtil.isUnderBundledLaf()) {
       myTextField.putClientProperty("JTextField.variant", "search");
     }
     if (hasNativeLeopardSearchControl()) {
@@ -135,7 +135,7 @@ public class SearchTextField extends JPanel {
         add(myToggleHistoryLabel, BorderLayout.WEST);
       }
 
-      myClearFieldLabel = new JLabel(UIUtil.isUnderDarcula() ? AllIcons.Actions.Clean : AllIcons.Actions.CleanLight);
+      myClearFieldLabel = new JLabel(UIUtil.isUnderBundledLaf() ? AllIcons.Actions.Clean : AllIcons.Actions.CleanLight);
       myClearFieldLabel.setOpaque(true);
       add(myClearFieldLabel, BorderLayout.EAST);
       myClearFieldLabel.addMouseListener(new MouseAdapter() {
@@ -206,14 +206,14 @@ public class SearchTextField extends JPanel {
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
-    if (UIUtil.isUnderDarcula() && false) {//todo[kb] fix DarculaTextBorder
+    if (UIUtil.isUnderBundledLaf() && false) {//todo[kb] fix DarculaTextBorder
       g.setColor(myTextField.getBackground());
       g.fillRect(2,3,getWidth(), getHeight()-5);
     }
   }
 
   private static boolean hasNativeLeopardSearchControl() {
-    return (SystemInfo.isMacOSLeopard && UIUtil.isUnderAquaLookAndFeel()) || UIUtil.isUnderDarcula();
+    return (SystemInfo.isMacOSLeopard && UIUtil.isUnderAquaLookAndFeel()) || UIUtil.isUnderBundledLaf();
   }
 
   private static boolean hasIconsOutsideOfTextField() {

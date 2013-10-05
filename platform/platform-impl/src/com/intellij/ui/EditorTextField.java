@@ -413,7 +413,7 @@ public class EditorTextField extends NonOpaquePanel implements DocumentListener,
     editor.setOneLineMode(isOneLineMode);
 
     final EditorColorsManager mgr = EditorColorsManager.getInstance();
-    final EditorColorsScheme defaultScheme = UIUtil.isUnderDarcula()
+    final EditorColorsScheme defaultScheme = UIUtil.isUnderBundledLaf()
                                              ? mgr.getScheme(mgr.getGlobalScheme().getName())
                                              : mgr.getScheme(EditorColorsManager.DEFAULT_SCHEME_NAME);
     final EditorColorsScheme customGlobalScheme = isOneLineMode ? defaultScheme : null;
@@ -559,8 +559,8 @@ public class EditorTextField extends NonOpaquePanel implements DocumentListener,
       final Container parent = getParent();
       if (parent instanceof JTable || parent instanceof CellRendererPane) return;
 
-      if (UIUtil.isUnderAquaLookAndFeel() || UIUtil.isUnderDarcula()) {
-        editor.setBorder(UIUtil.isUnderDarcula() ?  new DarculaEditorTextFieldBorder() : new MacUIUtil.EditorTextFieldBorder(this));
+      if (UIUtil.isUnderAquaLookAndFeel() || UIUtil.isUnderBundledLaf()) {
+        editor.setBorder(UIUtil.isUnderBundledLaf() ?  new DarculaEditorTextFieldBorder() : new MacUIUtil.EditorTextFieldBorder(this));
         editor.addFocusListener(new FocusChangeListener() {
           @Override
           public void focusGained(Editor editor) {
@@ -611,11 +611,11 @@ public class EditorTextField extends NonOpaquePanel implements DocumentListener,
 
   private Color getBackgroundColor(boolean enabled, final EditorColorsScheme colorsScheme){
     if (myEnforcedBgColor != null) return myEnforcedBgColor;
-    if (UIUtil.getParentOfType(CellRendererPane.class, this) != null && UIUtil.isUnderDarcula()) {
+    if (UIUtil.getParentOfType(CellRendererPane.class, this) != null && UIUtil.isUnderBundledLaf()) {
       return getParent().getBackground();
     }
 
-    if (UIUtil.isUnderDarcula()) return UIUtil.getTextFieldBackground();
+    if (UIUtil.isUnderBundledLaf()) return UIUtil.getTextFieldBackground();
 
     return enabled
            ? colorsScheme.getDefaultBackground()

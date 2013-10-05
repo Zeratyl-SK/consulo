@@ -136,7 +136,7 @@ public class UIUtil {
   private static final GrayFilter DARCULA_GRAY_FILTER = new GrayFilter(true, 30);
 
   public static GrayFilter getGrayFilter() {
-    return isUnderDarcula() ? DARCULA_GRAY_FILTER : DEFAULT_GRAY_FILTER;
+    return isUnderBundledLaf() ? DARCULA_GRAY_FILTER : DEFAULT_GRAY_FILTER;
   }
 
   public enum FontSize {NORMAL, SMALL, MINI}
@@ -751,7 +751,7 @@ public class UIUtil {
   }
 
   public static Color getListUnfocusedSelectionBackground() {
-    return isUnderDarcula() ? Gray._52 : UNFOCUSED_SELECTION_COLOR;
+    return isUnderBundledLaf() ? Gray._52 : UNFOCUSED_SELECTION_COLOR;
   }
 
   public static Color getTreeSelectionBackground(boolean focused) {
@@ -902,7 +902,7 @@ public class UIUtil {
   }
 
   public static Icon getTreeNodeIcon(boolean expanded, boolean selected, boolean focused) {
-    boolean white = (selected && focused) || isUnderDarcula();
+    boolean white = (selected && focused) || isUnderBundledLaf();
 
     Icon selectedIcon = getTreeSelectedExpandedIcon();
     Icon notSelectedIcon = getTreeExpandedIcon();
@@ -928,12 +928,12 @@ public class UIUtil {
   }
 
   public static Icon getTreeSelectedCollapsedIcon() {
-    return isUnderAquaBasedLookAndFeel() || isUnderNimbusLookAndFeel() || isUnderGTKLookAndFeel() || isUnderDarcula()
+    return isUnderAquaBasedLookAndFeel() || isUnderNimbusLookAndFeel() || isUnderGTKLookAndFeel() || isUnderBundledLaf()
            ? AllIcons.Mac.Tree_white_right_arrow : getTreeCollapsedIcon();
   }
 
   public static Icon getTreeSelectedExpandedIcon() {
-    return isUnderAquaBasedLookAndFeel() || isUnderNimbusLookAndFeel() || isUnderGTKLookAndFeel() || isUnderDarcula()
+    return isUnderAquaBasedLookAndFeel() || isUnderNimbusLookAndFeel() || isUnderGTKLookAndFeel() || isUnderBundledLaf()
            ? AllIcons.Mac.Tree_white_down_arrow : getTreeExpandedIcon();
   }
 
@@ -1006,7 +1006,7 @@ public class UIUtil {
 
   @SuppressWarnings({"HardCodedStringLiteral"})
   public static boolean isUnderAquaBasedLookAndFeel() {
-    return SystemInfo.isMac && (isUnderAquaLookAndFeel() || isUnderDarcula());
+    return SystemInfo.isMac && (isUnderAquaLookAndFeel() || isUnderBundledLaf());
   }
 
   /**
@@ -1020,6 +1020,13 @@ public class UIUtil {
   @SuppressWarnings({"HardCodedStringLiteral"})
   public static boolean isUnderDarcula() {
     return UIManager.getLookAndFeel().getName().contains("Darcula");
+  }
+  public static boolean isUnderBundledLaf() {
+    return isUnderDarcula() || isUnderLight();
+  }
+
+  public static boolean isUnderLight() {
+    return UIManager.getLookAndFeel().getName().contains("Light");
   }
 
   @SuppressWarnings({"HardCodedStringLiteral"})
@@ -1083,7 +1090,7 @@ public class UIUtil {
   }
 
   public static boolean isUnderNativeMacLookAndFeel() {
-    return isUnderAquaLookAndFeel() || isUnderDarcula();
+    return isUnderAquaLookAndFeel() || isUnderBundledLaf();
   }
 
   public static int getListCellHPadding() {
@@ -1877,7 +1884,7 @@ public class UIUtil {
   }
 
   public static Color getBorderColor() {
-    return isUnderDarcula() ? Gray._50 : BORDER_COLOR;
+    return isUnderBundledLaf() ? Gray._50 : BORDER_COLOR;
   }
 
   public static Font getTitledBorderFont() {
@@ -2305,8 +2312,8 @@ public class UIUtil {
     private float myLineSpacing;
 
     public TextPainter() {
-      myDrawShadow = /*isUnderAquaLookAndFeel() ||*/ isUnderDarcula();
-      myShadowColor = isUnderDarcula() ? Gray._0.withAlpha(100) : Gray._220;
+      myDrawShadow = /*isUnderAquaLookAndFeel() ||*/ isUnderBundledLaf();
+      myShadowColor = isUnderBundledLaf() ? Gray._0.withAlpha(100) : Gray._220;
       myLineSpacing = 1.0f;
     }
 
@@ -2433,7 +2440,7 @@ public class UIUtil {
           }
 
           if (myDrawShadow) {
-            int xOff = isUnderDarcula() ? 1 : 0;
+            int xOff = isUnderBundledLaf() ? 1 : 0;
             int yOff = 1;
             final Color oldColor = g.getColor();
             g.setColor(myShadowColor);

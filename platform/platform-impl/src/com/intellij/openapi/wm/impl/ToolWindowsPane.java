@@ -1031,7 +1031,7 @@ public final class ToolWindowsPane extends JBLayeredPane implements Disposable {
     public MyLayeredPane(final JComponent splitter) {
       myBottomImageRef=new SoftReference<BufferedImage>(null);
       myTopImageRef=new SoftReference<BufferedImage>(null);
-      setOpaque(!UIUtil.isUnderDarcula());
+      setOpaque(!UIUtil.isUnderBundledLaf());
       add(splitter,JLayeredPane.DEFAULT_LAYER);
     }
 

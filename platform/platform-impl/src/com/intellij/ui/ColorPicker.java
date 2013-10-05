@@ -164,7 +164,7 @@ public class ColorPicker extends JPanel implements ColorListener, DocumentListen
 
   private JTextField createColorField(boolean hex) {
     final NumberDocument doc = new NumberDocument(hex);
-    int lafFix = UIUtil.isUnderWindowsLookAndFeel() || UIUtil.isUnderDarcula() ? 1 : 0;
+    int lafFix = UIUtil.isUnderWindowsLookAndFeel() || UIUtil.isUnderBundledLaf() ? 1 : 0;
     UIManager.LookAndFeelInfo info = LafManager.getInstance().getCurrentLookAndFeel();
     if (info != null && (info.getName().startsWith("IDEA") || info.getName().equals("Windows Classic")))
       lafFix = 1;

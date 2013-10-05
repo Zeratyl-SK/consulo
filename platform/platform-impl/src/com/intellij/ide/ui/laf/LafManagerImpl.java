@@ -22,6 +22,8 @@ import com.intellij.ide.ui.LafManagerListener;
 import com.intellij.ide.ui.UISettings;
 import com.intellij.ide.ui.laf.darcula.DarculaLaf;
 import com.intellij.ide.ui.laf.darcula.DarculaLookAndFeelInfo;
+import com.intellij.ide.ui.laf.light.LightLaf;
+import com.intellij.ide.ui.laf.light.LightLookAndFeelInfo;
 import com.intellij.idea.StartupUtil;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationListener;
@@ -135,6 +137,7 @@ public final class LafManagerImpl extends LafManager implements ApplicationCompo
     }
 
     if (Registry.is("dark.laf.available")) {
+      lafList.add(new LightLookAndFeelInfo());
       lafList.add(new DarculaLookAndFeelInfo());
     }
 
@@ -336,6 +339,22 @@ public final class LafManagerImpl extends LafManager implements ApplicationCompo
         UIManager.setLookAndFeel(laf);
         JBColor.setDark(true);
         IconLoader.setUseDarkIcons(true);
+      }
+      catch (Exception e) {
+        Messages.showMessageDialog(
+          IdeBundle.message("error.cannot.set.look.and.feel", lookAndFeelInfo.getName(), e.getMessage()),
+          CommonBundle.getErrorTitle(),
+          Messages.getErrorIcon()
+        );
+        return;
+      }
+    }
+    else if (LightLookAndFeelInfo.CLASS_NAME.equals(lookAndFeelInfo.getClassName())) {
+      LightLaf laf = new LightLaf();
+      try {
+        UIManager.setLookAndFeel(laf);
+        JBColor.setDark(false);
+        IconLoader.setUseDarkIcons(false);
       }
       catch (Exception e) {
         Messages.showMessageDialog(

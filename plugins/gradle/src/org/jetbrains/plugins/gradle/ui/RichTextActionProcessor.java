@@ -1,7 +1,6 @@
 package org.jetbrains.plugins.gradle.ui;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.ui.LafManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.ex.ActionButtonLook;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
@@ -52,7 +51,7 @@ public class RichTextActionProcessor implements RichTextControlBuilder.RichTextP
         g.drawLine(0, y, width, y);
       }
     };
-    Color color = UIUtil.isUnderDarcula() ? Color.ORANGE : Color.BLUE;
+    Color color = UIUtil.isUnderBundledLaf() ? Color.ORANGE : Color.BLUE;
     result.setForeground(color);
     result.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 

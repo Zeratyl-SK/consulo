@@ -219,7 +219,7 @@ final class ImageEditorUI extends JPanel implements DataProvider {
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         g.setColor(UIUtil.getControlColor().brighter());
         g.fillRect(0, 0, getWidth(), getHeight());
       }

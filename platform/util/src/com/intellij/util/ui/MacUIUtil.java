@@ -49,7 +49,7 @@ public class MacUIUtil {
   }
 
   public static void paintFocusRing(Graphics2D g, Color ringColor, Rectangle bounds, boolean oval) {
-    int correction = UIUtil.isUnderDarcula() ? 50 : 0;
+    int correction = UIUtil.isUnderBundledLaf() ? 50 : 0;
     final Color[] colors = new Color[]{
       ColorUtil.toAlpha(ringColor, 180 - correction),
       ColorUtil.toAlpha(ringColor, 120 - correction),

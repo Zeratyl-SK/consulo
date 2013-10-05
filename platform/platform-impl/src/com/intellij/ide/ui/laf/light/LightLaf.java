@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2011 JetBrains s.r.o.
+ * Copyright 2013 Consulo.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,32 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.ide.ui.laf.light;
 
-/*
- * @author max
- */
-package com.intellij.ui;
+import com.intellij.ide.ui.laf.darcula.DarculaMetalTheme;
+import com.intellij.ide.ui.laf.basic.BasicLaf;
 
-import com.intellij.util.ui.UIUtil;
-
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.plaf.metal.DefaultMetalTheme;
 
 /**
- * @author max
+ * @author VISTALL
+ * @since 20:59/05.10.13
  */
-public class EngravedLabel extends JLabel {
-  public EngravedLabel(String text) {
-    super(text);
-    setOpaque(false);
-  }
+public class LightLaf extends BasicLaf {
+  public static final String NAME = "Light";
 
-  public EngravedLabel() {
-    this("");
+  public LightLaf() {
+    super(NAME);
   }
 
   @Override
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(UIUtil.isUnderBundledLaf() ? g : new EngravedTextGraphics((Graphics2D)g));
+  public DefaultMetalTheme createTheme() {
+    return new LightMetalTheme();
   }
 }

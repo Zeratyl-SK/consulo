@@ -296,8 +296,8 @@ public abstract class ContentRootPanel extends JPanel {
   public void setSelected(boolean selected) {
     if (selected) {
       myHeader.setBackground(SELECTED_HEADER_COLOR);
-      setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
-      myBottom.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_HEADER_COLOR);
+      setBackground(UIUtil.isUnderBundledLaf() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
+      myBottom.setBackground(UIUtil.isUnderBundledLaf() ? UIUtil.getPanelBackground() : SELECTED_HEADER_COLOR);
       for (final JComponent component : myComponentToForegroundMap.keySet()) {
         component.setForeground(myComponentToForegroundMap.get(component));
       }
@@ -305,7 +305,7 @@ public abstract class ContentRootPanel extends JPanel {
     else {
       myHeader.setBackground(HEADER_COLOR);
       setBackground(CONTENT_COLOR);
-      myBottom.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : HEADER_COLOR);
+      myBottom.setBackground(UIUtil.isUnderBundledLaf() ? UIUtil.getPanelBackground() : HEADER_COLOR);
       for (final JComponent component : myComponentToForegroundMap.keySet()) {
         component.setForeground(UNSELECTED_TEXT_COLOR);
       }
@@ -347,11 +347,11 @@ public abstract class ContentRootPanel extends JPanel {
       }
       */
       final Stroke saved = g.getStroke();
-      if (!SystemInfo.isMac && !UIUtil.isUnderDarcula()) {
+      if (!SystemInfo.isMac && !UIUtil.isUnderBundledLaf()) {
         g.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 0, DASH, y1 % 2));
       }
 
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         UIUtil.drawDottedLine(g, x1, y1, x2, y2, null, g.getColor());
       }
       else {

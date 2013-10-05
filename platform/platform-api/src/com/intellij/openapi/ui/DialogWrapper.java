@@ -491,7 +491,7 @@ public abstract class DialogWrapper {
 
     if (hasHelpToMoveToLeftSide) {
       JButton helpButton = new JButton(getHelpAction());
-      if (!UIUtil.isUnderDarcula()) {
+      if (!UIUtil.isUnderBundledLaf()) {
         helpButton.putClientProperty("JButton.buttonType", "help");
         helpButton.setText("");
       }

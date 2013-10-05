@@ -62,7 +62,7 @@ public class TipUIUtil {
       String replaced = text.toString().replace("&productName;", ApplicationNamesInfo.getInstance().getFullProductName());
       replaced = replaced.replace("&majorVersion;", ApplicationInfo.getInstance().getMajorVersion());
       replaced = replaced.replace("&minorVersion;", ApplicationInfo.getInstance().getMinorVersion());
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         replaced = replaced.replace("css/tips.css", "css/tips_darcula.css");
       }
       browser.read(new StringReader(replaced), url);

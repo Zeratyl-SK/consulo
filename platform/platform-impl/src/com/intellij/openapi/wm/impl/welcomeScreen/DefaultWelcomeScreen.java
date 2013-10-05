@@ -86,19 +86,19 @@ public class DefaultWelcomeScreen implements WelcomeScreen {
   private static final Font LINK_FONT = new Font(CAPTION_FONT_NAME, Font.BOLD, 12);
   private static final Font GROUP_CAPTION_FONT = new Font(CAPTION_FONT_NAME, Font.BOLD, 18);
 
-  private static final Color WELCOME_PANEL_BACKGROUND = UIUtil.isUnderDarcula() ? UIUtil.getControlColor() : Color.WHITE;
+  private static final Color WELCOME_PANEL_BACKGROUND = UIUtil.isUnderBundledLaf() ? UIUtil.getControlColor() : Color.WHITE;
   private static final Color MAIN_PANEL_BACKGROUND = WELCOME_PANEL_BACKGROUND;
-  private static final Color PLUGINS_PANEL_BACKGROUND = UIUtil.isUnderDarcula() ? UIUtil.getControlColor() : Gray._248;
-  private static final Color PLUGINS_PANEL_BORDER = UIUtil.isUnderDarcula() ? PLUGINS_PANEL_BACKGROUND : Gray._234;
-  private static final Color CAPTION_COLOR = UIUtil.isUnderDarcula() ? DarculaColors.BLUE : new Color(47, 67, 96);
+  private static final Color PLUGINS_PANEL_BACKGROUND = UIUtil.isUnderBundledLaf() ? UIUtil.getControlColor() : Gray._248;
+  private static final Color PLUGINS_PANEL_BORDER = UIUtil.isUnderBundledLaf() ? PLUGINS_PANEL_BACKGROUND : Gray._234;
+  private static final Color CAPTION_COLOR = UIUtil.isUnderBundledLaf() ? DarculaColors.BLUE : new Color(47, 67, 96);
   public static final SimpleTextAttributes CAPTION_BOLD_UNDERLINE_ATTRIBUTES =
     new SimpleTextAttributes(SimpleTextAttributes.STYLE_UNDERLINE | SimpleTextAttributes.STYLE_BOLD, CAPTION_COLOR);
   public static final SimpleTextAttributes CAPTION_UNDERLINE_ATTRIBUTES =
     new SimpleTextAttributes(SimpleTextAttributes.STYLE_UNDERLINE, CAPTION_COLOR);
   private static final Color DISABLED_CAPTION_COLOR = UIUtil.getInactiveTextColor();
   private static final Color ACTION_BUTTON_COLOR = Gray._0.withAlpha(0);
-  private static final Color BUTTON_POPPED_COLOR = UIUtil.isUnderDarcula() ? Gray.get(WELCOME_PANEL_BACKGROUND.getRed() + 10) : Gray._241;
-  private static final Color BUTTON_PUSHED_COLOR = UIUtil.isUnderDarcula() ? Gray.get(WELCOME_PANEL_BACKGROUND.getRed() + 5) : Gray._228;
+  private static final Color BUTTON_POPPED_COLOR = UIUtil.isUnderBundledLaf() ? Gray.get(WELCOME_PANEL_BACKGROUND.getRed() + 10) : Gray._241;
+  private static final Color BUTTON_PUSHED_COLOR = UIUtil.isUnderBundledLaf() ? Gray.get(WELCOME_PANEL_BACKGROUND.getRed() + 5) : Gray._228;
 
   @NonNls private static final String ___HTML_SUFFIX = "...</html>";
   @NonNls private static final String ESC_NEW_LINE = "\\n";

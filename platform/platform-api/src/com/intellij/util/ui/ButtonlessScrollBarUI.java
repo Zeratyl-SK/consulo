@@ -53,7 +53,7 @@ public class ButtonlessScrollBarUI extends BasicScrollBarUI {
   }
 
   private static final BasicStroke BORDER_STROKE = new BasicStroke();
-  public static final int ANIMATION_COLOR_SHIFT = UIUtil.isUnderDarcula() ? 20 : 40;
+  public static final int ANIMATION_COLOR_SHIFT = UIUtil.isUnderBundledLaf() ? 20 : 40;
 
   private final AdjustmentListener myAdjustmentListener;
   private final MouseMotionAdapter myMouseMotionListener;
@@ -295,7 +295,7 @@ public class ButtonlessScrollBarUI extends BasicScrollBarUI {
 
   protected Color adjustColor(Color c) {
     if (myAnimationColorShift == 0) return c;
-    final int sign = UIUtil.isUnderDarcula() ? -1 : 1;
+    final int sign = UIUtil.isUnderBundledLaf() ? -1 : 1;
     return Gray.get(Math.max(0, Math.min(255, c.getRed() - sign * myAnimationColorShift)));
   }
 

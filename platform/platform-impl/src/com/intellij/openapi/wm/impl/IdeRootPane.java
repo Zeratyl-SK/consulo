@@ -193,7 +193,7 @@ public class IdeRootPane extends JRootPane implements UISettingsListener {
       @Nullable
       @Override
       public Icon getCenterImage() {
-        if (UIUtil.isUnderDarcula()) {
+        if (UIUtil.isUnderBundledLaf()) {
           String url = ApplicationInfoEx.getInstanceEx().getEditorBackgroundImageUrl();
           if (url != null) {
             return IconLoader.getIcon(url);
@@ -205,7 +205,7 @@ public class IdeRootPane extends JRootPane implements UISettingsListener {
       @Nullable
       @Override
       public Icon getBackgroundImage() {
-        return UIUtil.isUnderDarcula() ? BG : null;
+        return UIUtil.isUnderBundledLaf() ? BG : null;
       }
 
       @Override

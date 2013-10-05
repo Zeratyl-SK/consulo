@@ -28,7 +28,7 @@ public class NavBarUIManager {
   
 
   public static NavBarUI getUI() {
-    if (UIUtil.isUnderAquaLookAndFeel()) return AQUA;
+    if (UIUtil.isUnderAquaLookAndFeel() || UIUtil.isUnderLight()) return AQUA;
     if (UIUtil.isUnderGTKLookAndFeel())  return GTK;
     if (UIUtil.isUnderDarcula())         return DARCULA;
     return COMMON;

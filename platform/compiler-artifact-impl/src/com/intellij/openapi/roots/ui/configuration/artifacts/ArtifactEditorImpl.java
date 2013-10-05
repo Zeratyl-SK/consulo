@@ -205,13 +205,13 @@ public class ArtifactEditorImpl implements ArtifactEditorEx {
     Splitter splitter = new Splitter(false);
     final JPanel leftPanel = new JPanel(new BorderLayout());
     JPanel treePanel = myLayoutTreeComponent.getTreePanel();
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       treePanel.setBorder(new EmptyBorder(3, 0, 0, 0));
     } else {
       treePanel.setBorder(new LineBorder(UIUtil.getBorderColor()));
     }
     leftPanel.add(treePanel, BorderLayout.CENTER);
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       CompoundBorder border =
         new CompoundBorder(new CustomLineBorder(UIUtil.getBorderColor(), 0, 0, 0, 1), BorderFactory.createEmptyBorder(0, 0, 0, 0));
       leftPanel.setBorder(border);
@@ -241,17 +241,17 @@ public class ArtifactEditorImpl implements ArtifactEditorEx {
     labelPanel.add(link);
     rightTopPanel.add(labelPanel, BorderLayout.CENTER);
     rightPanel.add(rightTopPanel, BorderLayout.NORTH);
-    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(mySourceItemsTree, UIUtil.isUnderDarcula());
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(mySourceItemsTree, UIUtil.isUnderBundledLaf());
     JPanel scrollPaneWrap = new JPanel(new BorderLayout());
     scrollPaneWrap.add(scrollPane, BorderLayout.CENTER);
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       scrollPaneWrap.setBorder(new EmptyBorder(3, 0, 0, 0));
     } else {
       scrollPaneWrap.setBorder(new LineBorder(UIUtil.getBorderColor()));
     }
 
     rightPanel.add(scrollPaneWrap, BorderLayout.CENTER);
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       rightPanel.setBorder(new CompoundBorder(new CustomLineBorder(0, 1, 0, 0), BorderFactory.createEmptyBorder(0, 0, 0, 0)));
     } else {
       rightPanel.setBorder(BorderFactory.createEmptyBorder(3, 0, 3, 3));
@@ -277,7 +277,7 @@ public class ArtifactEditorImpl implements ArtifactEditorEx {
 
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, createToolbarActionGroup(), true);
     JComponent toolbarComponent = toolbar.getComponent();
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       toolbarComponent.setBorder(new CustomLineBorder(0,0,1,0));
     }
     leftPanel.add(toolbarComponent, BorderLayout.NORTH);

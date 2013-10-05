@@ -345,7 +345,7 @@ public class InlineProgressIndicator extends ProgressIndicatorBase implements Di
       g.setColor(UIUtil.getPanelBackground());
       g.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, arc, arc);
 
-      if (!UIUtil.isUnderDarcula()) {
+      if (!UIUtil.isUnderBundledLaf()) {
         bg = ColorUtil.toAlpha(bg.darker().darker(), 230);
         g.setColor(bg);
 

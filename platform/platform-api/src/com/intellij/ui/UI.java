@@ -73,7 +73,7 @@ public class UI {
   }
 
   public static Color getColor(@NonNls String id) {
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       final Color color = UIManager.getColor(id);
       if (color != null) {
         return color;

@@ -80,7 +80,7 @@ class ContentTabLabel extends BaseLabel {
   @Override
   protected Color getPassiveFg(boolean selected) {
     if (contentManager().getContentCount() > 1) {
-      return selected && !UIUtil.isUnderDarcula() ? Gray._255 : super.getPassiveFg(selected);
+      return selected && !UIUtil.isUnderBundledLaf() ? Gray._255 : super.getPassiveFg(selected);
     }
     return super.getPassiveFg(selected);
   }

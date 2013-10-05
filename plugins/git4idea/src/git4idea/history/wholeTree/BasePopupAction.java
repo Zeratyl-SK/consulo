@@ -52,9 +52,9 @@ public abstract class BasePopupAction extends DumbAwareAction implements CustomC
     myPanel.setLayout(layout);
     myLabel = new JLabel();
     final JLabel show = new JLabel(labeltext);
-    show.setForeground(UIUtil.isUnderDarcula() ? UIUtil.getLabelForeground() : UIUtil.getInactiveTextColor());
+    show.setForeground(UIUtil.isUnderBundledLaf() ? UIUtil.getLabelForeground() : UIUtil.getInactiveTextColor());
     show.setBorder(BorderFactory.createEmptyBorder(1, 2, 1, 2));
-    myLabel.setForeground(UIUtil.isUnderDarcula() ? UIUtil.getLabelForeground() : DARKER);
+    myLabel.setForeground(UIUtil.isUnderBundledLaf() ? UIUtil.getLabelForeground() : DARKER);
     myPanel.add(show);
     myPanel.add(myLabel);
     myPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 3));
@@ -70,7 +70,7 @@ public abstract class BasePopupAction extends DumbAwareAction implements CustomC
       }
     }.installOn(myPanel);
 
-    if (! UIUtil.isUnderDarcula()) {
+    if (! UIUtil.isUnderBundledLaf()) {
       myPanel.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseEntered(MouseEvent e) {
@@ -150,6 +150,6 @@ public abstract class BasePopupAction extends DumbAwareAction implements CustomC
   }
 
   private void setLabelFg() {
-    myLabel.setForeground(UIUtil.isUnderDarcula() ? UIUtil.getLabelForeground() : myGreyed ? UIUtil.getInactiveTextColor() : DARKER);
+    myLabel.setForeground(UIUtil.isUnderBundledLaf() ? UIUtil.getLabelForeground() : myGreyed ? UIUtil.getInactiveTextColor() : DARKER);
   }
 }

@@ -588,7 +588,7 @@ public class VcsDirectoryConfigurationPanel extends JPanel implements Configurab
       setBackground(new Color(255, 186, 192));
 
       JBLabel label = new JBLabel(title);
-      if( UIUtil.isUnderDarcula()) {
+      if( UIUtil.isUnderBundledLaf()) {
         label.setForeground(UIUtil.getPanelBackground());
       }
 

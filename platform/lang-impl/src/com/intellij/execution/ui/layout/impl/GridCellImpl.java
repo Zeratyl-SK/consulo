@@ -82,7 +82,7 @@ public class GridCellImpl implements GridCell {
 
       @Override
       protected void paintBorder(Graphics2D g2d, ShapeInfo shape, Color borderColor) {
-        if (UIUtil.isUnderDarcula()) {
+        if (UIUtil.isUnderBundledLaf()) {
           return;
         }
         super.paintBorder(g2d, shape, borderColor);

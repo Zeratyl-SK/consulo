@@ -72,7 +72,7 @@ public abstract class AbstractUpdateDialog extends DialogWrapper {
     }
     updateLinkPane.setBackground(UIUtil.getPanelBackground());
     String css = UIUtil.getCssFontDeclaration(UIUtil.getLabelFont());
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       css += "<style>body {background: #" + ColorUtil.toHex(UIUtil.getPanelBackground()) + ";}</style>";
     }
     updateLinkPane.setBorder(IdeBorderFactory.createEmptyBorder(0));

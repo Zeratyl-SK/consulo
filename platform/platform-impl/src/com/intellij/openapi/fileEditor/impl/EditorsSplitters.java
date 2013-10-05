@@ -108,7 +108,7 @@ public class EditorsSplitters extends JBPanel {
   }
 
   private void updateBackground() {
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       setBackgroundImage(IconLoader.getIcon("/frame_background.png"));
       String icon = ApplicationInfoEx.getInstanceEx().getEditorBackgroundImageUrl();
       if (icon != null) setCenterImage(IconLoader.getIcon(icon));
@@ -174,14 +174,14 @@ public class EditorsSplitters extends JBPanel {
     super.paintComponent(g);
 
     if (myCurrentWindow == null || myCurrentWindow.getFiles().length == 0) {
-      g.setColor(UIUtil.isUnderDarcula()? UIUtil.getBorderColor() : new Color(0, 0, 0, 50));
+      g.setColor(UIUtil.isUnderBundledLaf()? UIUtil.getBorderColor() : new Color(0, 0, 0, 50));
       g.drawLine(0, 0, getWidth(), 0);
     }
 
     if (showEmptyText()) {
       UIUtil.applyRenderingHints(g);
       g.setColor(new JBColor(Gray._100, Gray._160));
-      g.setFont(UIUtil.getLabelFont().deriveFont(UIUtil.isUnderDarcula() ? 24f : 18f));
+      g.setFont(UIUtil.getLabelFont().deriveFont(UIUtil.isUnderBundledLaf() ? 24f : 18f));
 
       final UIUtil.TextPainter painter = new UIUtil.TextPainter().withShadow(true).withLineSpacing(1.4f);
       painter.appendLine("No files are open").underlined(new JBColor(Gray._150, Gray._100));

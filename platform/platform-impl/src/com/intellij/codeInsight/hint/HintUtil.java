@@ -91,7 +91,7 @@ public class HintUtil {
   @NotNull
   public static HintHint getInformationHint() {
     return new HintHint().setTextBg(INFORMATION_COLOR)
-      .setTextFg(UIUtil.isUnderDarcula() ? UIUtil.getLabelForeground() : Color.black)
+      .setTextFg(UIUtil.isUnderBundledLaf() ? UIUtil.getLabelForeground() : Color.black)
       .setFont(getBoldFont())
       .setAwtTooltip(true);
   }

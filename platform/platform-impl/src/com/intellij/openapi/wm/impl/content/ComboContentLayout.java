@@ -83,7 +83,7 @@ class ComboContentLayout extends ContentLayout {
     if (!isToDrawCombo()) return;
 
     Rectangle r = myComboLabel.getBounds();
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       g.setColor(ColorUtil.toAlpha(UIUtil.getLabelForeground(), 20));
       g.drawLine(r.width, 0, r.width, r.height);
       g.setColor(ColorUtil.toAlpha(UIUtil.getBorderColor(), 50));

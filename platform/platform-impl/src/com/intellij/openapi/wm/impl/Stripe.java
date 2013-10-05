@@ -73,7 +73,7 @@ final class Stripe extends JPanel{
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
       Insets insets = ((JComponent)c).getInsets();
 
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         g.setColor(Gray._40);
         drawBorder(g, x, y, width, height, insets);
       } else {
@@ -90,7 +90,7 @@ final class Stripe extends JPanel{
       if (insets.left == 1) g.drawLine(x, y, x, y + height);
       if (insets.bottom == 1) g.drawLine(x, y + height - 1, x + width, y + height - 1);
 
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         final Color c = g.getColor();
         if (insets.top == 2) {
           g.setColor(c);
@@ -122,7 +122,7 @@ final class Stripe extends JPanel{
       ToolWindowAnchor anchor = stripe.getAnchor();
 
       Insets result = new Insets(0, 0, 0, 0);
-      final int off = UIUtil.isUnderDarcula() ? 1 : 0;
+      final int off = UIUtil.isUnderBundledLaf() ? 1 : 0;
       if (anchor == ToolWindowAnchor.LEFT) {
         result.top = 1;
         result.right = 1 + off;
@@ -610,7 +610,7 @@ final class Stripe extends JPanel{
       g.setColor(getBackground().brighter());
       g.fillRect(0, 0, getWidth(), getHeight());
     }
-    if (UIUtil.isUnderDarcula()) return;
+    if (UIUtil.isUnderBundledLaf()) return;
     ToolWindowAnchor anchor = getAnchor();
     g.setColor(new Color(255, 255, 255, 40));
     Rectangle r = getBounds();

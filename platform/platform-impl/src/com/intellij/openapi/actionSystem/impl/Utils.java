@@ -259,7 +259,7 @@ public class Utils{
 
             @Override
             protected void paintComponent(Graphics g) {
-              if (UIUtil.isUnderWindowsClassicLookAndFeel() || UIUtil.isUnderDarcula() || UIUtil.isUnderWindowsLookAndFeel()) {
+              if (UIUtil.isUnderWindowsClassicLookAndFeel() || UIUtil.isUnderBundledLaf() || UIUtil.isUnderWindowsLookAndFeel()) {
                 g.setColor(component.getBackground());
                 g.fillRect(0, 0, getWidth(), getHeight());
               }

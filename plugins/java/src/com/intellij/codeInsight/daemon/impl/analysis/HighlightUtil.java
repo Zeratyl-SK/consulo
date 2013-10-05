@@ -2353,7 +2353,7 @@ public class HighlightUtil extends HighlightUtilBase {
   @NonNls
   private static String redIfNotMatch(PsiType type, boolean matches) {
     if (matches) return getFQName(type, false);
-    String color = UIUtil.isUnderDarcula() ? "FF6B68" : "red";
+    String color = UIUtil.isUnderBundledLaf() ? "FF6B68" : "red";
     return "<font color='" + color +"'><b>" + getFQName(type, true) + "</b></font>";
   }
 

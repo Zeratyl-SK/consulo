@@ -495,7 +495,7 @@ public class EditorMarkupModelImpl extends MarkupModelImpl implements EditorMark
 
     @Override
     protected Color adjustColor(Color c) {
-      if (UIUtil.isUnderDarcula()) {
+      if (UIUtil.isUnderBundledLaf()) {
         return c;
       }
       return ColorUtil.withAlpha(ColorUtil.shift(super.adjustColor(c), 0.9), 0.85);

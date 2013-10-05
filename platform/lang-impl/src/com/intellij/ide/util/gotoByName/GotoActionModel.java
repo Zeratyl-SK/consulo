@@ -163,7 +163,7 @@ public class GotoActionModel implements ChooseByNameModel, CustomMatcherModel, C
           }
         }
         else if (value instanceof OptionDescription) {
-          if (!isSelected && !UIUtil.isUnderDarcula()) {
+          if (!isSelected && !UIUtil.isUnderBundledLaf()) {
             panel.setBackground(LightColors.SLIGHTLY_GRAY);
           }
           String hit = ((OptionDescription)value).getHit();

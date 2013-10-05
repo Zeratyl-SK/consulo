@@ -334,7 +334,7 @@ public class AnnotateToggleAction extends ToggleAction implements DumbAware, Ann
     final Map<String, Color> revNumbers = new HashMap<String, Color>();
     final int length = BG_COLORS.length;
     final List<VcsFileRevision> fileRevisionList = fileAnnotation.getRevisions();
-    final boolean darcula = UIUtil.isUnderDarcula();
+    final boolean darcula = UIUtil.isUnderBundledLaf();
     if (fileRevisionList != null) {
       for (VcsFileRevision revision : fileRevisionList) {
         final String author = revision.getAuthor();

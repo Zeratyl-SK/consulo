@@ -562,7 +562,7 @@ public class IdeStatusBarImpl extends JComponent implements StatusBarEx {
       setUI((StatusBarUI)UIManager.getUI(this));
     }
     else {
-      setUI(SystemInfo.isMac && !UIUtil.isUnderDarcula() ? new MacStatusBarUI() : new StatusBarUI());
+      setUI(SystemInfo.isMac && !UIUtil.isUnderBundledLaf() ? new MacStatusBarUI() : new StatusBarUI());
     }
   }
 
@@ -586,7 +586,7 @@ public class IdeStatusBarImpl extends JComponent implements StatusBarEx {
   @Override
   public void paint(Graphics g) {
     super.paint(g);
-    if (UIUtil.isUnderDarcula()) {
+    if (UIUtil.isUnderBundledLaf()) {
       //IDEA-112093
       g.setColor(UIUtil.getPanelBackground());
       g.drawLine(0, getHeight(), getWidth(), getHeight());

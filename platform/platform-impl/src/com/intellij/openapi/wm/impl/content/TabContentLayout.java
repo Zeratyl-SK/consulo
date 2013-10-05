@@ -343,7 +343,7 @@ class TabContentLayout extends ContentLayout {
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
     if (selected) {
-      if (!UIUtil.isUnderDarcula()) {
+      if (!UIUtil.isUnderBundledLaf()) {
       g2d.setColor(active ? new Color(0, 0, 0, 70) : new Color(0, 0, 0, 90));
       g2d.fillRect(0, 0, r.width, r.height);
 
@@ -369,7 +369,7 @@ class TabContentLayout extends ContentLayout {
       g2d.setPaint(UIUtil.getGradientPaint(0, 0, new Color(0, 0, 0, 10), 0, r.height, new Color(0, 0, 0, 30)));
       g2d.fillRect(0, 0, r.width, r.height);
 
-      final Color c = new Color(255, 255, 255, UIUtil.isUnderDarcula() ? 10 : 80);
+      final Color c = new Color(255, 255, 255, UIUtil.isUnderBundledLaf() ? 10 : 80);
       if (last) {
         if (prevSelected) {
           g2d.setColor(c);

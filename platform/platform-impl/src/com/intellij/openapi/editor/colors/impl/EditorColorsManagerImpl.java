@@ -92,7 +92,7 @@ public class EditorColorsManagerImpl extends EditorColorsManager implements Name
   }
 
   public TextAttributes getDefaultAttributes(TextAttributesKey key) {
-    final boolean dark = UIUtil.isUnderDarcula() && getScheme("Darcula") != null;
+    final boolean dark = UIUtil.isUnderBundledLaf() && getScheme("Darcula") != null;
     // It is reasonable to fetch attributes from Default color scheme. Otherwise if we launch IDE and then
     // try switch from custom colors scheme (e.g. with dark background) to default one. Editor will show
     // incorrect highlighting with "traces" of color scheme which was active during IDE startup.
